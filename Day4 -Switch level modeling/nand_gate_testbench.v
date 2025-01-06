@@ -17,7 +17,7 @@ module tb_nand;
 
         forever #50 in1 = ~in1;
     end
-    initial 
+   
     initial begin
         forever #100 in2 = ~in2;
     end
