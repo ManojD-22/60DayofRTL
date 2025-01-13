@@ -25,11 +25,14 @@ module tb_mux4to1_2to1();
     reg [1:0] select;
     wire y_out;
     
-    mux_4to1_using_2to1(
+    mux_4to1_using_2to1 dut(
         .i(i),
         .select(select),
         .y_out(y_out)
     );
+    
+    always #10 i = i + 1;
+    always #20 select = select + 1;
     
     initial begin
         i = 4'b0000;
