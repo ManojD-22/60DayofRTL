@@ -21,8 +21,8 @@
 
 
 module encoder_8to3 (
-    input [7:0] in,  // 8-bit input
-    output reg [2:0] out // 3-bit output
+    input [7:0] in,  
+    output reg [2:0] out 
 );
     always @(*) begin
         if (in[7] == 1) out = 3'b111;
@@ -43,3 +43,4 @@ module encoder_8to3 (
         else out = 3'bxxx; // If no input is active
     end
 endmodule
+

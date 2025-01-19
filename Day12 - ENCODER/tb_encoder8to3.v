@@ -1,22 +1,22 @@
-module tb_encoder_8to3;
+module tb_encoder_8to3();
     reg [7:0] in;    
     wire [2:0] out; 
 
-    encoder_8to3 uut (
+    encoder_8to3 dut (
         .in(in),
         .out(out)
     );
 
-    always #10 i = i + 1;
+    always #10 in = in + 1;
     
     
     initial begin
-        i = 0;
+        in = 0;
         #500 $finish;
     end
 
     initial begin
-        $monitor("%t | i : %b | out : %b ",$time , i , out);
+        $monitor("%t | in : %b | out : %b ",$time , in , out);
     end
 
 endmodule
