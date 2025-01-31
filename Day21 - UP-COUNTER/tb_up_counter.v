@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 31.01.2025 23:45:25
+// Create Date: 01.02.2025 00:14:03
 // Design Name: 
-// Module Name: up_counter
+// Module Name: tb_up_counter
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,19 +20,39 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module up_counter(
-    input clk,
-    input reset,
-    input data,
-    output reg [3:0] data_out
+module tb_up_counter();
+    reg clk;
+    reg reset;
+    reg enable;
+    wire [3:0] data_out;
+    
+    up_counter UP(
+    .clk(clk),
+    .reset(reset),
+    .enable(enable),
+    .data_out(data_out)
     );
     
-    always@(posedge clk or negedge reset)begin
-        if(!reset)begin
-            data_out <= 4'b0000;
-        end else begin
-            data_out <= data_out + 1;
-        end
+    always #5 clk = ~clk;
+
+    initial begin
+        clk = 0;
+        reset = 0;
+        enable = 0;
         
+        #20 reset = 1;
+        
+        #10 enable = 1;
+        
+        #70 enable = 0;
+        
+        #20 enable = 1;
+        
+        #500 $finish;
+    end
+    
+    initial begin
+        $monitor("%t | clk : %b | reset : %b | enable : %b | data_out : %b", $time, clk , reset, enable, data_out );
     end
 endmodule
+
