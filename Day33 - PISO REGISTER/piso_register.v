@@ -6,4 +6,12 @@ module piso_register(
     output reg q
 );
 
+always@(posedge clk or posedge reset)begin
+    
+    if(reset)begin
+
+    end
+    
+end
+
 endmodule
