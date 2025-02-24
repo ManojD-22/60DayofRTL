@@ -6,4 +6,19 @@ module tb_piso_register();
     wire q
 
 
+   piso_register DUT (
+
+    .clk(clk),
+    .reset(reset),
+    .load(load),
+    .d(d),
+    .q(q)
+);
+
+always #5 clk = ~clk;
+
+
+ 
+
+
 endmodule

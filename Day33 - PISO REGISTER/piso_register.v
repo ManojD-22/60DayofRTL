@@ -7,7 +7,7 @@ module piso_register(
     output reg q
 );
 
-reh [3:0] shift_reg;
+reg [3:0] shift_reg;
 
 
 always@(posedge clk or posedge reset)begin
