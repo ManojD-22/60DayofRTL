@@ -6,3 +6,10 @@ module single_port_ram(
     output wdata
 );
 
+always@(posedge clk or negedge reset)begin
+    
+    if(!reset)begin
+        wdata <= 1'b0;
+    end else
+        
+end
