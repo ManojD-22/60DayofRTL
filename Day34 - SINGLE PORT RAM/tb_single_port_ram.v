@@ -15,5 +15,7 @@ module tb_single_port_ram #(parameter DATA_WIDTH = 8 , ADD_WIDTH = 4)();
     .wdata(wdata)
 );
 
+always #5 clk = ~clk;
 
+    
 endmodule
