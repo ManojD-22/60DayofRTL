@@ -19,6 +19,7 @@ always #5 clk = ~clk;
 
     initial begin
         clk = 0;
-        
+        data = 0;
+        addr = 0;
     end
 endmodule
