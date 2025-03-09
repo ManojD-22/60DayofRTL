@@ -1,4 +1,26 @@
-module single_port_ram #(parameter DATA_WIDTH = 8 , ADD_WIDTH = 4)(
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 07.03.2025 13:49:30
+// Design Name: 
+// Module Name: single_port_memory
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module single_port_memory #(parameter DATA_WIDTH = 8 , ADD_WIDTH = 4)(
     input clk,
     input reset,
     input we,
